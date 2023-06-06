@@ -1,0 +1,48 @@
+#pragma kernel Density
+
+static const int numThreads = 8;
+
+RWStructuredBuffer<float4> points;
+int numPointsPerAxis;
+
+int indexFromCoord(uint x, uint y, uint z) {
+    return z * numPointsPerAxis * numPointsPerAxis + y * numPointsPerAxis + x;
+}
+bool terraform;
+int3 terraformPos;
+int terraformWeight;
+
+
+// return smooth value between 0 and 1 (0 when t = minVal, 1 when t = maxVal)
+float smoothStep(float minVal, float maxVal, float t) {
+    t = saturate((t-minVal) / (maxVal - minVal));
+    return t * t * (3 - 2 * t);
+}
+
+
+[numthreads(numThreads,numThreads,numThreads)]
+void Density (int3 id : SV_DispatchThreadID)
+{
+    if (id.x >= numPointsPerAxis || id.y >= numPointsPerAxis || id.z >= numPointsPerAxis) {
+        return;
+    }
+    
+    int index = indexFromCoord(id.x,id.y,id.z);
+
+    // terraform
+
+    // terraformPos.y += ;
+    // id += 0.5;
+    const float3 offset = id - terraformPos;
+
+    const float terraformRange = 2.5;
+    // when two vectors are identical, the dot product is their squared magnitude  
+    const int squaredDistance = dot(offset, offset);
+    // abs(offset.x) < 2 && abs(offset.y) < 2 && abs(offset.z) < 2
+    if (squaredDistance < pow(terraformRange, 2))
+    {
+        const float distance = sqrt(squaredDistance);
+        const float brushWeight = 1-smoothStep(0, terraformRange, distance);
+        points[index].w += 0.22 * brushWeight * terraformWeight;
+    }
+}
