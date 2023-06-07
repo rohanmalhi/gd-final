@@ -432,9 +432,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 813762355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 344fb098f319c1346ac0b903c6c6acb1, type: 3}
+  m_Script: {fileID: 11500000, guid: a1409df337fb5554ba670a92e8aa872a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
+  playerCam: {fileID: 0}
+  mapCam: {fileID: 0}
+  resumeButton: {fileID: 0}
+  pauseSettingsButton: {fileID: 0}
+  pauseQuitButton: {fileID: 0}
 --- !u!1 &865445555
 GameObject:
   m_ObjectHideFlags: 0
