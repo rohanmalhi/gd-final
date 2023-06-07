@@ -435,12 +435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344fb098f319c1346ac0b903c6c6acb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  playerCam: {fileID: 0}
-  mapCam: {fileID: 0}
-  resumeButton: {fileID: 0}
-  pauseSettingsButton: {fileID: 0}
-  pauseQuitButton: {fileID: 0}
 --- !u!1 &865445555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1147,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 116411a4c9451c44892bf984b0132ddf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d3c040e200eb5d445b481c9ca4e9d78a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.421
   m_Pitch: 1
