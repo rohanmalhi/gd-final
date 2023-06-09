@@ -61,9 +61,9 @@
      <Compile Include="Assets\Scripts\Multiplayer\UIManager.cs" />
      <Compile Include="Assets\Scripts\Chunk.cs" />
      <Compile Include="Assets\Scripts\Terraformer.cs" />
+     <Compile Include="Assets\ConnectionManager.cs" />
      <Compile Include="Assets\Scripts\FastNoiseLite.cs" />
      <Compile Include="Assets\Scripts\TreeSpawner.cs" />
-     <Compile Include="Assets\ConnectionManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Scripts\Compute\Includes\Density.compute" />

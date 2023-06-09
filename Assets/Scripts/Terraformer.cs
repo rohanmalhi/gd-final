@@ -7,6 +7,7 @@ public class Terraformer : MonoBehaviour
     public LayerMask canTerraform;
     public MeshGenerator meshGenerator;
     public Builder Builder;
+    public AudioSource sound;
     
     public Transform orientation;
     void Update()

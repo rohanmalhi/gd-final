@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class PlayerController : MonoBehaviour
     [Header("Drag")] 
     [SerializeField] private float groundDrag = 5f;
     [SerializeField] private float airDrag = 1f;
+
+    [Header("Sounds")]
+    public AudioSource footsteps;
+    public AudioSource jump;
+    public AudioSource terraformingSound;
     
     
     private float _horizontalMovement;
@@ -52,8 +58,28 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+    
 
         _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _slopeHit.normal);
+
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
+             Input.GetKey(KeyCode.D)) && _isGrounded)
+        {
+            footsteps.enabled = true;
+        }
+        else
+        {
+            footsteps.enabled = false;
+        }
+
+        if (Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.Mouse0))
+        {
+            terraformingSound.enabled = true;
+        }
+        else
+        {
+            terraformingSound.enabled = false;
+        }
     }
 
     private void ControlDrag()
