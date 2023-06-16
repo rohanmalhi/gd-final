@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 6;
+
+    public float sprintSpeed = 8;
     public float jumpForce;
     public float airMovementMultiplier = 0.2f;
     private readonly float _movementMultiplier = 10f;
@@ -118,18 +120,38 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (_isGrounded && !OnSlope())
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            _rb.AddForce(_moveDirection.normalized * moveSpeed * _movementMultiplier, ForceMode.Acceleration);
+            if (_isGrounded && !OnSlope())
+            {
+                _rb.AddForce(_moveDirection.normalized * sprintSpeed * _movementMultiplier, ForceMode.Acceleration);
+            }
+            else if (_isGrounded && OnSlope())
+            {
+                _rb.AddForce(_slopeMoveDirection.normalized * sprintSpeed * _movementMultiplier, ForceMode.Acceleration);
+            }
+            else if (!_isGrounded)
+            {
+                _rb.AddForce(_moveDirection.normalized * (sprintSpeed * _movementMultiplier * airMovementMultiplier), 
+                    ForceMode.Acceleration);
+            }
         }
-        else if (_isGrounded && OnSlope())
+        else
         {
-            _rb.AddForce(_slopeMoveDirection.normalized * moveSpeed * _movementMultiplier, ForceMode.Acceleration);
+            if (_isGrounded && !OnSlope())
+            {
+                _rb.AddForce(_moveDirection.normalized * moveSpeed * _movementMultiplier, ForceMode.Acceleration);
+            }
+            else if (_isGrounded && OnSlope())
+            {
+                _rb.AddForce(_slopeMoveDirection.normalized * moveSpeed * _movementMultiplier, ForceMode.Acceleration);
+            }
+            else if (!_isGrounded)
+            {
+                _rb.AddForce(_moveDirection.normalized * (moveSpeed * _movementMultiplier * airMovementMultiplier), 
+                    ForceMode.Acceleration);
+            }
         }
-        else if (!_isGrounded)
-        {
-            _rb.AddForce(_moveDirection.normalized * (moveSpeed * _movementMultiplier * airMovementMultiplier), 
-                ForceMode.Acceleration);
-        }
+        
     }
 }

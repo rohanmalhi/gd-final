@@ -14,10 +14,12 @@ public class GameManager : MonoBehaviour
     
 
     [SerializeField] private GameObject panel;
+    [SerializeField] private AudioSource buttonSound;
     
     [Header("Map Stuff")]
     [SerializeField] GameObject playerCam;
     [SerializeField] private GameObject mapCam;
+    [SerializeField] private GameObject crosshair;
     
     
     [Header("Pause Menu Buttons")] 
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene ();
         string sceneName = currentScene.name;
 
-        if (sceneName == "SampleScene")
+        if (sceneName == "Terrain")
         {
             gameRunning = true;
             menu = 0;
@@ -73,16 +75,19 @@ public class GameManager : MonoBehaviour
 
     public void OnNewGameButtonClick()
     {
+        buttonSound.Play();
         SceneManager.LoadScene(1);
     }
 
     public void OnSettingsButtonClick()
     {
+        buttonSound.Play();
         SceneManager.LoadScene("SettingsMenu");
     }
 
     public void OnResumeButtonClick()
     {
+        buttonSound.Play();
         menu = 0;
         gameRunning = true;
         panel.SetActive(false);
@@ -93,10 +98,12 @@ public class GameManager : MonoBehaviour
     public void OnMainQuitButtonClick()
     {
         Application.Quit();
+        buttonSound.Play();
     }
 
     public void OnLevelQuitButtonClick()
     {
+        buttonSound.Play();
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
             SceneManager.LoadScene(1);
@@ -105,20 +112,25 @@ public class GameManager : MonoBehaviour
 
     public void OnQuitToMenuClick()
     {
+        buttonSound.Play();
         SceneManager.LoadScene("MainMenu");
     }
 
     public void OnMapButtonClick()
     {
+        buttonSound.Play();
         playerCam.SetActive(false);
         mapCam.SetActive(true);
         panel.SetActive(false);
+        crosshair.SetActive(false);
     }
 
     public void OnMapReturnClick()
     {
+        buttonSound.Play();
         playerCam.SetActive(false);
         mapCam.SetActive(true);
         panel.SetActive(false);
+        crosshair.SetActive(true);
     }
 }

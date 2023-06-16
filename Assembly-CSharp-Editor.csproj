@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\ConditionalHidePropertyDrawer.cs" />
      <Compile Include="Assets\Editor\MapGeneratorEditor.cs" />
+     <Compile Include="Assets\Editor\ConditionalHidePropertyDrawer.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity 2021.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
