@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     public void OnNewGameButtonClick()
     {
         buttonSound.Play();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("TransitionScene");
     }
 
     public void OnSettingsButtonClick()

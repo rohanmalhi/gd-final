@@ -26,7 +26,7 @@ public class ScoreObject : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Weapon")
         {
             score++;
             scoreText.text = "Score: " + score;

@@ -1,11 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
+using TMPro;
+using UnityEditor.UI;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class NPC : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private GameObject crosshair;
+    [SerializeField] private GameObject deadMenu;
+    [SerializeField] private GameObject ui;
+
+    private int playerHealth = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +32,22 @@ public class NPC : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Weapon"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            
+            if (playerHealth > 1)
+            {
+                playerHealth -= 1;
+                scoreText.text = "Health: " + playerHealth;
+            }
+            else
+            {
+                crosshair.gameObject.SetActive(false);
+                ui.gameObject.SetActive(false);
+                deadMenu.gameObject.SetActive(true);
+            }
+        }  else if (collision.gameObject.CompareTag("Weapon"))
+        {
+            transform.position = new Vector3(0, 0, 0);
         }
     }
 }

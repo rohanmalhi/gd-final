@@ -1,9 +1,13 @@
 ﻿using System;
+using TMPro;
+using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 
 public class PlayerController : MonoBehaviour
 {
+    public TextMeshPro health;
     [Header("Movement")]
     public float moveSpeed = 6;
 
@@ -153,5 +157,16 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Portal"))
+        {
+            SceneManager.LoadScene("Terrain");
+        } else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            _transform.position = new Vector3(0, 20, 0);
+        }
     }
 }
