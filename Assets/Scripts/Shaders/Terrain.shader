@@ -40,6 +40,9 @@
         {
             // Albedo comes from a texture tinted by color
             float h = smoothstep(-boundsY/2, boundsY/2, IN.worldPos.y + IN.worldNormal.y * normalOffsetWeight);
+            // Calculate steepness as dot product of normal and up vector
+            //float h = abs(dot(IN.worldNormal, float3(0,1,0)));
+
             float3 tex = tex2D(ramp, float2(h,.5));
             o.Albedo = tex;
             // Metallic and smoothness come from slider variables

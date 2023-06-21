@@ -14,6 +14,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject crosshair;
     [SerializeField] private GameObject deadMenu;
     [SerializeField] private GameObject ui;
+    [SerializeField] private AudioSource scream;
 
     private int playerHealth = 4;
     // Start is called before the first frame update
@@ -36,6 +37,8 @@ public class NPC : MonoBehaviour
         {
             if (playerHealth > 1)
             {
+                AudioSource source = GetComponent<AudioSource>();
+                source.Play();
                 playerHealth -= 1;
                 scoreText.text = "Health: " + playerHealth;
             }
@@ -47,6 +50,7 @@ public class NPC : MonoBehaviour
             }
         }  else if (collision.gameObject.CompareTag("Weapon"))
         {
+            scream.Play();
             transform.position = new Vector3(0, 0, 0);
         }
     }

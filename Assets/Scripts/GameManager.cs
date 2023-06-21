@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
     {
         buttonSound.Play();
         SceneManager.LoadScene("TransitionScene");
+        Time.timeScale = 1;
     }
 
     public void OnSettingsButtonClick()

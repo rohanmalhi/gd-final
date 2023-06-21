@@ -75,6 +75,8 @@
      <Compile Include="Assets\Scripts\FastNoiseLite.cs" />
      <Compile Include="Assets\Scripts\TreeSpawner.cs" />
      <Compile Include="Assets\Scripts\Player\Respawn.cs" />
+     <Compile Include="Assets\Scripts\PoissonDiscSampling.cs" />
+     <Compile Include="Assets\Scripts\DayNightCycle.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Scripts\Compute\Includes\Density.compute" />
@@ -82,6 +84,7 @@
      <None Include="Assets\Scripts\Shaders\Terrain.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\Shaders\CustomTessellation.cginc" />
      <None Include="Assets\Scripts\Compute\Includes\FastNoiseLite.compute" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Scripts\Shaders\SeaWorld.shader" />
@@ -94,9 +97,11 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Materials\StandardFlatSurfaceShader.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\Materials\SteepnessColor.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\BrokenVector\LowPolyTreePack\README.txt" />
      <None Include="Assets\Scripts\Compute\Terraform.compute" />
+     <None Include="Assets\Materials\ToonWater.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Scripts\Compute\Includes\Noise.compute" />
      <None Include="Assets\Scripts\Compute\Includes\MarchTables.compute" />
@@ -108,6 +113,7 @@
      <None Include="Assets\Scripts\Multiplayer\RiptideNetworking.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Scripts\Compute\NoiseDensity.compute" />
+     <None Include="Assets\Shaders\TessellationExample.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity 2021.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

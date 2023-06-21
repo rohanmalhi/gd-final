@@ -439,6 +439,7 @@ MonoBehaviour:
   buttonSound: {fileID: 1903410862}
   playerCam: {fileID: 0}
   mapCam: {fileID: 0}
+  crosshair: {fileID: 0}
   resumeButton: {fileID: 0}
   pauseSettingsButton: {fileID: 0}
   pauseQuitButton: {fileID: 0}
@@ -1162,7 +1163,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3c040e200eb5d445b481c9ca4e9d78a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.098
+  m_Volume: 0.227
   m_Pitch: 1
   Loop: 1
   Mute: 0

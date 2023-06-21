@@ -8,6 +8,7 @@ public class Terraformer : MonoBehaviour
     public MeshGenerator meshGenerator;
     public Builder Builder;
     public AudioSource sound;
+    public ParticleSystem particleSystem;
     
     public Transform orientation;
     void Update()
@@ -26,6 +27,8 @@ public class Terraformer : MonoBehaviour
         int weight;
         if (Input.GetMouseButton(1) && !hit.collider.gameObject.tag.Equals("Player"))
         {
+            particleSystem.transform.position = hit.point;
+            particleSystem.Play();
             if (Vector3.Distance(hit.point, orientation.position) < 2)
             {
                 return;
@@ -37,6 +40,8 @@ public class Terraformer : MonoBehaviour
     
         else if (Input.GetMouseButton(0) && !hit.collider.gameObject.tag.Equals("Player"))
         {
+            particleSystem.transform.position = hit.point;
+            particleSystem.Play();
             weight = -1;
             UpdateTerraform(hit, weight);
         }

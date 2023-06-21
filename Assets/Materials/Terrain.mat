@@ -47,6 +47,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -71,9 +75,17 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Test: -1.46
+    - _Thresh: 0.005
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.41495726, g: 0.38314348, b: 0.6603774, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GrassDark: {r: 0.013869631, g: 0.16981131, b: 0, a: 1}
+    - _GrassLight: {r: 0.22097522, g: 0.4056604, b: 0, a: 1}
+    - _RockDark: {r: 0.42352942, g: 0.19607843, b: 0.047058824, a: 1}
+    - _RockInnerDeep: {r: 1, g: 1, b: 1, a: 1}
+    - _RockInnerShallow: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _RockLight: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   m_BuildTextureStacks: []
