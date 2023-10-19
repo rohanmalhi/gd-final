@@ -2,4 +2,5 @@ a hastily thrown together tech demo disguised as a "game" that me and [andyw-061
 
 features:
   - procedurally generated (and theoretically infinite) terrain
+  - destructible and placeable terrain
   - nothing else of interest
